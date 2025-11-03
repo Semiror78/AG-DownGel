@@ -22,6 +22,8 @@
 4. 选择文件类型。
 5. （可选）输入 User ID 和 API Key。
 6. 点击“下载全部” – 文件保存到 `downloads/[标签]/`。
+![alt text](https://github.com/Semiror78/AG-DownGel/blob/main/api.png?raw=true)
+
 
 ## 示例标签
 来自 `guide.txt`：
