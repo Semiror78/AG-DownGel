@@ -1,7 +1,7 @@
-[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/oledjigames/AG-DownGel/blob/main/README.md)
-[![ru](https://img.shields.io/badge/lang-ru-green.svg)](https://github.com/oledjigames/AG-DownGel/blob/main/README.ru.md)
-[![zh](https://img.shields.io/badge/lang-zh-yellow.svg)](https://github.com/oledjigames/AG-DownGel/blob/main/README.zh.md)
-[![ja](https://img.shields.io/badge/lang-ja-yellow.svg)](https://github.com/oledjigames/AG-DownGel/blob/main/README.ja.md)
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/Semiror78/AG-DownGel/blob/main/README.md)
+[![ru](https://img.shields.io/badge/lang-ru-green.svg)](https://github.com/Semiror78/AG-DownGel/blob/main/README.ru.md)
+[![zh](https://img.shields.io/badge/lang-zh-yellow.svg)](https://github.com/Semiror78/AG-DownGel/blob/main/README.zh.md)
+[![ja](https://img.shields.io/badge/lang-ja-yellow.svg)](https://github.com/Semiror78/AG-DownGel/blob/main/README.ja.md)
 
 # AG-DownGel
 
