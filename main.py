@@ -36,7 +36,7 @@ class Worker(QThread):
                 "page": "dapi",
                 "s": "post",
                 "q": "index",
-                "limit": 1000,
+                "limit": 100,
                 "json": 1,
                 "tags": self.tags,
             }
@@ -97,7 +97,7 @@ class Worker(QThread):
                     total_str = f" / {total_count}"
                 self.progressUpdated.emit(current_count, total_count if has_total else 0)
                 self.statusChanged.emit(self.tr["received_posts"].format(current_count, total_str))
-                if len(new_posts) < 1000:
+                if len(new_posts) < 100:
                     break
                 pid += 1
 
@@ -150,8 +150,17 @@ class Worker(QThread):
                 filepath = os.path.join(subdir_path, filename)
                 
                 try:
-                    dl_response = requests.get(url, stream=True)
+                    dl_headers = {
+                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+                        "Referer": "https://gelbooru.com/",
+                    }
+                    dl_response = requests.get(url, stream=True, headers=dl_headers, timeout=30)
                     dl_response.raise_for_status()
+                    content_type = dl_response.headers.get("Content-Type", "")
+                    if "text/html" in content_type or "application/json" in content_type:
+                        self.statusChanged.emit(self.tr["download_error"].format(url, f"Unexpected content-type: {content_type}"))
+                        self.progressUpdated.emit(processed, total_posts)
+                        continue
                     with open(filepath, 'wb') as f:
                         for chunk in dl_response.iter_content(chunk_size=8192):
                             if chunk:
